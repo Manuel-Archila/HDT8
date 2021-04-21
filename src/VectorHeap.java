@@ -4,12 +4,19 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
 
     protected Vector<E> data; // the data, kept in heap order
 
+    /**
+     * Constructor de un heap vacio.
+     */
     public VectorHeap()
     // post: constructs a new priority queue
     {
         data = new Vector<E>();
     }
 
+    /**
+     * Constructor para un heap con datos ya existentes en un vector.
+     * @param v, vector con los datos existentes.
+     */
     public VectorHeap(Vector<E> v)
     // post: constructs a new priority queue from an unordered vector
     {
@@ -20,10 +27,18 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
         }
     }
 
+    /**
+     * Metodo que devuelve el valor con mayor prioridad
+     * @return el valor de mayor prioridad
+     */
     public E getFirst(){
         return Collections.min(data);
     }
 
+    /**
+     * Metodo que devuelve verdadero si es el heap esta vacio
+     * @return Verdadero si el heap esta vacio
+     */
     public boolean isEmpty(){
         return data.isEmpty();
     }
@@ -72,6 +87,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
         data.set(leaf, value);
     }
 
+    /**
+     * Metodo que anade un valor al heap
+     * @param value, el valor que se desea agregar
+     */
     public void add(E value)
     // pre: value is non-null comparable
     // post: value is added to priority queue
@@ -111,6 +130,10 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
         }
     }
 
+    /**
+     * Metodo que remueve del heap el elemento con mayor prioridad.
+     * @return el elemento que se removio.
+     */
     public E remove()
     // pre: !isEmpty()
     // post: returns and removes minimum value from queue
