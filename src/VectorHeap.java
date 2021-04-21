@@ -43,10 +43,17 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E>{
         return data.isEmpty();
     }
 
+    /**
+     * Metodo que devuelve la cantidad de elementos dentro del heap
+     * @return int con la cantidad del elementos dentro del heap
+     */
     public int size(){
         return data.size();
     }
 
+    /**
+     * Metodo que limpia el heap
+     */
     public void clear(){
         data.clear();
     }
